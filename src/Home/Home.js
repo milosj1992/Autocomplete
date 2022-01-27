@@ -6,7 +6,7 @@ import logo from '../Assets/logo.svg'
 import ex from '../Assets/CloseIcon.svg'
 
 
-export const Home = (token) => {
+export const Home = () => {
     const [countrylist, setCountrylist] = useState([]);
     const [letters, setLetters] = useState('');
     const [parent, setParent] = useState([]);
@@ -65,7 +65,7 @@ export const Home = (token) => {
                 null}
             </div>
             <div onClick={() => lockCountry(parent.country_name)}>{parent != '' ?
-                (<div className="country-info"><CountrInfo data={{parent, token}}/></div>) :
+                (<div className="country-info"><CountrInfo data={{parent}}/></div>) :
                 <div>{null}</div>
             }</div>
         </div>

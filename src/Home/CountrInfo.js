@@ -69,7 +69,7 @@ export const CountrInfo = ({data}) => {
         const response=await fetch(urlforcityfetch,{
             "headers":{
 
-                'Authorization':'Bearer '+data.token.token
+                'Authorization':'Bearer '+localStorage.getItem('token')
             }
         });
         var citi=await response.json();
