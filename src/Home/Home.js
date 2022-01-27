@@ -7,7 +7,6 @@ import ex from '../Assets/CloseIcon.svg'
 
 
 export const Home = (token) => {
-    const [value, setValue] = useState(false);
     const [countrylist, setCountrylist] = useState([]);
     const [letters, setLetters] = useState('');
     const [parent, setParent] = useState([]);
@@ -38,10 +37,6 @@ export const Home = (token) => {
 
     const updateValue = (e) => {
         setLetters(e.target.value);
-        if (letters != '') {
-            setValue(false);
-
-        }
     }
     const lockCountry = (country) => {
         if (country == undefined) {
@@ -51,7 +46,6 @@ export const Home = (token) => {
         setLetters(country);
     }
     const removeStates = () => {
-        setValue(true);
         setCountrylist([]);
         setLetters('');
         setParent([]);
@@ -61,8 +55,8 @@ export const Home = (token) => {
             <div className="auto-complete">
                 <div className="logo-welcome-home"><img src={logo} /></div>
                 <div className="input-and-close">
-                    {value && letters != undefined ? (<input className="autoc-input" onChange={updateValue} value={letters || ""}></input>)
-                        : <input className="autoc-input" onChange={updateValue} value={parent.country_name}></input>}
+                     <input className="autoc-input" onChange={updateValue} value={parent.country_name || letters}></input>
+
                     <div className="ex" onClick={() => removeStates()}><img src={ex} /></div>
                 </div>
             </div>
