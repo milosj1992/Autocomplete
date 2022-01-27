@@ -85,9 +85,6 @@ export const CountrInfo = ({data}) => {
         if(citylist[(citylist[0].summary.total_pages)-1] && responsecity.length==0){
             setResponsecity(haversineformula(citylist))
         }
-        else{
-        }
-
         return(<div>
         {responsecity!=undefined && responsecity.near!=undefined && responsecity.far.city.length>0 ?
             <div>

@@ -56,7 +56,6 @@ export const Home = (token) => {
                 <div className="logo-welcome-home"><img src={logo} /></div>
                 <div className="input-and-close">
                      <input className="autoc-input" onChange={updateValue} value={parent.country_name || letters}></input>
-
                     <div className="ex" onClick={() => removeStates()}><img src={ex} /></div>
                 </div>
             </div>
