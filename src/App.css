@@ -88,9 +88,6 @@
   flex-direction: column;
   margin-bottom: 10px;
 }
-/*.input-and-close{*/
-/*  margin-left: 10px;*/
-/*}*/
 .auto-n-count{
   display: flex;
   margin: 15px 0 0 15px;
@@ -131,9 +128,6 @@
   flex-direction: column;
   flex: 1 1 auto;
 }
-/*.country-under{*/
-/*  width: 250px;*/
-/*}*/
 .closest{
   margin-bottom: 10px;
   font-weight: bold;
