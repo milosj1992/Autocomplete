@@ -75,7 +75,7 @@ export const CountrInfo = ({data}) => {
         var citi=await response.json();
         if(citi!=undefined && citi.summary!=null ){
             if(citi.summary.next!=null){
-                setUrlforcityfetch('/api/countries/'+decodeURIComponent(citi.summary.next));
+                setUrlforcityfetch('/api/countries'+decodeURIComponent(citi.summary.next));
             }
 
             setCitylist(citylist=>[...citylist,citi]);
@@ -85,9 +85,9 @@ export const CountrInfo = ({data}) => {
         if(citylist[(citylist[0].summary.total_pages)-1] && responsecity.length==0){
             setResponsecity(haversineformula(citylist))
         }
-        return(<div>
+        return(<div className="country-calc-n-stf">
         {responsecity!=undefined && responsecity.near!=undefined && responsecity.far.city.length>0 ?
-            <div>
+            <div className="farest-n-closest">
                 <div className="closest">Closest city in {data.parent.country_name}</div>
                 <div className="closest-city">{responsecity.near.city[0].name} - {responsecity.near.city[1].name}</div>
                 <div className="closest-distance">distance {Math.round(responsecity.near.value * 100) / 100 }km</div>
@@ -95,7 +95,7 @@ export const CountrInfo = ({data}) => {
                 <div className="farect-city">{responsecity.far.city[0].name} - {responsecity.far.city[1].name}</div>
                 <div className="farest-distance">distance {Math.round(responsecity.far.value * 100) / 100 }km</div>
             </div>:
-            <div>calculating</div>}
+            <div className="calculus">calculating</div>}
             </div>
         )
     }

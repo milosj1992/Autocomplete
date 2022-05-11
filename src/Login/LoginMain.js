@@ -3,7 +3,6 @@ import {Home} from "../Home/Home";
 import logo from '../Assets/logo.svg';
 
 export const LoginMain = () => {
-    // const [checktoken, setChecktoken] = useState(false);
     const [token, setToken] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +17,6 @@ export const LoginMain = () => {
         });
         var truetoken = await response.json();
         if (await truetoken.token != undefined) {
-            // setChecktoken(true);
             setToken(truetoken.token);
             localStorage.setItem('token', truetoken.token)
         }
@@ -32,10 +30,10 @@ export const LoginMain = () => {
         setPassword(e.target.value);
     }
     return (localStorage.getItem('token')!=null ?
-        <div>
+        <div className="home-wrapper">
             <Home token={token}/>
         </div> :
-        <div>
+        <div className="welcome-wrapper">
             <div className="Welcometab">
                 <img src={logo} />
                 <div className="welcome-text">

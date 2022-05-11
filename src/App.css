@@ -34,12 +34,14 @@
 .ex{
   display: inline;
   position: absolute;
-  right: 5px;
+  right: 0px;
   z-index: 2;
-  top: 0px;
+  height: 24px;
 }
 .country-list{
   z-index: 2;
+  max-height: 110px;
+  overflow-y: scroll;
 }
 .Welcometab{
   margin-top: 20px;
@@ -62,7 +64,7 @@
   padding: 4px 10px;
   background: deepskyblue;
   border: none;
-  float: right;
+  float: left;
   border-radius: 3px;
   color: white;
   margin-right: -14px;
@@ -78,22 +80,86 @@
   display: inline-block;
 }
 .input-and-close{
-  vertical-align: top;
+  display: flex;
+  align-items: center;
 }
 .auto-complete{
-  float: left;
-  display: block;
-  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
-.input-and-close{
-  margin-left: 10px;
-}
+/*.input-and-close{*/
+/*  margin-left: 10px;*/
+/*}*/
 .auto-n-count{
-  float: left;
+  display: flex;
+  margin: 15px 0 0 15px;
+  flex-flow: row wrap;
+  gap: 50px;
 }
 .autoc-input{
   padding: 17px;
 }
+.country-under{
+  max-width: 205px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 1px;
+}
+.country-list div:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+.country-list div{
+  padding:3px 0;
+}
+.login-n-welcome{
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.search-n-info-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.country-info-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+/*.country-under{*/
+/*  width: 250px;*/
+/*}*/
+.closest{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.closest-city{
+  color: dodgerblue;
+  margin-bottom: 5px;
+}
+.closest-distance{
+  color: grey;
+  text-transform: capitalize;
+}
+.farest{
+  margin-top:20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.farect-city{
+  color: dodgerblue;
+  margin-bottom: 5px;
+}
+.farest-distance{
+  color: grey;
+  text-transform: capitalize;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
